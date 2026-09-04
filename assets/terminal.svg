@@ -1,10 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 460" width="100%" height="100%">
   <defs>
+    <!-- Background Gradient -->
     <linearGradient id="termBg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#0b0e14" />
       <stop offset="100%" stop-color="#040608" />
     </linearGradient>
 
+    <!-- Deep Red Fire Aura -->
     <radialGradient id="kaliFireAura" cx="50%" cy="54%" r="48%">
       <stop offset="0%" stop-color="#ff002b" stop-opacity="0.32">
         <animate attributeName="stop-opacity" values="0.18;0.45;0.18" dur="3.5s" repeatCount="indefinite" />
@@ -13,6 +15,7 @@
       <stop offset="100%" stop-color="#000000" stop-opacity="0" />
     </radialGradient>
 
+    <!-- Native SVG Typewriter Clips -->
     <clipPath id="typeCommand1">
       <rect x="0" y="-18" width="0" height="30">
         <animate attributeName="width" values="0;0;190;190;0" keyTimes="0;0.02;0.14;0.96;1" dur="14s" repeatCount="indefinite" />
@@ -38,57 +41,73 @@
     </clipPath>
   </defs>
 
+  <!-- Base Terminal Shell -->
   <rect width="820" height="460" rx="12" fill="url(#termBg)" stroke="#21262d" stroke-width="1.5" />
   <rect width="820" height="460" rx="12" fill="url(#kaliFireAura)" />
 
+  <!-- KALI LINUX DRAGON (Pulsing and Shining) -->
   <g id="dragon-group" opacity="0.6">
     <animate attributeName="opacity" values="0.35;0.85;0.35" dur="4s" repeatCount="indefinite" />
     <animateTransform attributeName="transform" type="scale" values="0.96;1.04;0.96" 
                       cx="410" cy="250" dur="4s" repeatCount="indefinite" />
 
+    <!-- Red Fire/Flame Aura -->
     <path d="M 400,215 C 385,210 375,225 378,240 C 365,245 360,260 370,275 C 375,285 390,295 405,290 C 415,285 410,270 425,265 C 440,260 450,275 440,290 C 432,275 435,260 425,250 C 415,240 420,225 400,215 Z" 
           fill="#ff0026" opacity="0.5" />
 
+    <!-- Dragon Wings -->
     <path d="M 390,212 C 340,205 300,208 275,208 C 315,215 350,222 388,222 Z" fill="#e6edf3" />
     <path d="M 390,222 C 345,224 310,234 290,242 C 325,242 360,236 391,230 Z" fill="#d0d7de" />
     <path d="M 392,230 C 355,238 330,254 310,268 C 335,260 365,248 395,237 Z" fill="#afb8c1" />
 
+    <!-- Dragon Head & Spine -->
     <path d="M 390,212 C 400,210 415,220 428,227 C 442,234 455,243 466,252 C 458,252 450,248 444,249 C 436,251 440,258 433,260 C 424,262 420,250 414,244 C 404,234 398,222 390,212 Z" 
           fill="#f0f6fc" />
 
+    <!-- Main S-Curve Body -->
     <path d="M 390,212 C 398,226 400,240 388,254 C 376,268 376,282 392,292 C 410,302 432,298 456,295 C 435,302 405,307 386,298 C 368,288 368,270 380,252 C 390,238 390,224 390,212 Z" 
           fill="#ffffff" />
 
+    <!-- Tail Curves -->
     <path d="M 392,292 C 420,296 450,305 470,332 C 452,318 425,302 392,292 Z" fill="#e6edf3" />
     <path d="M 405,296 C 430,306 452,330 462,358 C 452,336 432,314 405,296 Z" fill="#8c959f" />
   </g>
 
+  <!-- Top Title Bar -->
   <rect width="820" height="35" rx="12" fill="#161b22" />
   <rect y="23" width="820" height="12" fill="#161b22" />
   <line x1="0" y1="35" x2="820" y2="35" stroke="#21262d" stroke-width="1" />
 
+  <!-- Action Dots -->
   <circle cx="22" cy="18" r="5" fill="#ff5f56" />
   <circle cx="38" cy="18" r="5" fill="#ffbd2e" />
   <circle cx="54" cy="18" r="5" fill="#27c93f" />
   <text x="410" y="22" font-family="monospace" font-size="13" font-weight="bold" fill="#8b949e" text-anchor="middle">root@kali: ~ (zsh)</text>
 
+  <!-- Terminal Output Commands -->
   <g transform="translate(30, 70)" font-family="monospace" font-size="13">
     
-    <g>
+    <!-- Step 1: whoami (hidden initially, only shows up when typing starts) -->
+    <g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.02;0.96;1" dur="14s" repeatCount="indefinite" />
       <text x="0" y="0"><tspan fill="#ff334b" font-weight="bold">root@kali</tspan><tspan fill="#58a6ff" font-weight="bold">:[~]# </tspan></text>
+      <!-- Typed text container -->
       <g transform="translate(100, 0)" clip-path="url(#typeCommand1)">
         <text x="0" y="0" fill="#39d353" font-weight="bold">whoami &amp;&amp; hostname</text>
       </g>
-      <rect y="-12" width="8" height="14" fill="#39d353">
+      <!-- Moving Cursor while typing (starts hidden) -->
+      <rect y="-12" width="8" height="14" fill="#39d353" opacity="0">
         <animate attributeName="x" values="100;100;285;285;100" keyTimes="0;0.02;0.14;0.16;1" dur="14s" repeatCount="indefinite" />
-        <animate attributeName="opacity" values="1;1;1;0;0" keyTimes="0;0.14;0.15;0.16;1" dur="14s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.02;0.14;0.15;1" dur="14s" repeatCount="indefinite" />
       </rect>
+      <!-- Response line -->
       <g opacity="0">
         <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.16;0.17;0.96;1" dur="14s" repeatCount="indefinite" />
         <text x="0" y="22" fill="#8b949e">anzarhasnat // offensive-security-node [UID: 0]</text>
       </g>
     </g>
 
+    <!-- Step 2: iwconfig -->
     <g transform="translate(0, 52)">
       <g opacity="0">
         <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.21;0.22;0.96;1" dur="14s" repeatCount="indefinite" />
@@ -97,16 +116,18 @@
       <g transform="translate(100, 0)" clip-path="url(#typeCommand2)">
         <text x="0" y="0" fill="#39d353" font-weight="bold">iwconfig wlan0</text>
       </g>
-      <rect y="-12" width="8" height="14" fill="#39d353">
+      <rect y="-12" width="8" height="14" fill="#39d353" opacity="0">
         <animate attributeName="x" values="100;100;235;235;100" keyTimes="0;0.22;0.34;0.36;1" dur="14s" repeatCount="indefinite" />
         <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.22;0.34;0.35;1" dur="14s" repeatCount="indefinite" />
       </rect>
+      <!-- Response lines -->
       <g opacity="0">
         <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.36;0.37;0.96;1" dur="14s" repeatCount="indefinite" />
         <text x="0" y="22" fill="#8b949e">wlan0   IEEE 802.11  Mode:Managed  Frequency:2.437 GHz  Tx-Power=20 dBm</text>
       </g>
     </g>
 
+    <!-- Step 3: airmon-ng -->
     <g transform="translate(0, 104)">
       <g opacity="0">
         <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.43;0.44;0.96;1" dur="14s" repeatCount="indefinite" />
@@ -115,10 +136,11 @@
       <g transform="translate(100, 0)" clip-path="url(#typeCommand3)">
         <text x="0" y="0" fill="#39d353" font-weight="bold">airmon-ng start wlan0</text>
       </g>
-      <rect y="-12" width="8" height="14" fill="#39d353">
+      <rect y="-12" width="8" height="14" fill="#39d353" opacity="0">
         <animate attributeName="x" values="100;100;290;290;100" keyTimes="0;0.44;0.56;0.58;1" dur="14s" repeatCount="indefinite" />
         <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.44;0.56;0.57;1" dur="14s" repeatCount="indefinite" />
       </rect>
+      <!-- Response lines -->
       <g opacity="0">
         <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.58;0.59;0.96;1" dur="14s" repeatCount="indefinite" />
         <text x="0" y="22" fill="#e3b341">[i] Killing conflicting processes...</text>
@@ -126,6 +148,7 @@
       </g>
     </g>
 
+    <!-- Step 4: airodump-ng & Active Session -->
     <g transform="translate(0, 178)">
       <g opacity="0">
         <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.67;0.68;0.96;1" dur="14s" repeatCount="indefinite" />
@@ -134,11 +157,12 @@
       <g transform="translate(100, 0)" clip-path="url(#typeCommand4)">
         <text x="0" y="0" fill="#39d353" font-weight="bold">airodump-ng -c 6 --bssid 00:1A:2B:6F:98:C1</text>
       </g>
-      <rect y="-12" width="8" height="14" fill="#39d353">
+      <rect y="-12" width="8" height="14" fill="#39d353" opacity="0">
         <animate attributeName="x" values="100;100;455;455;100" keyTimes="0;0.68;0.82;0.84;1" dur="14s" repeatCount="indefinite" />
         <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.68;0.82;0.83;1" dur="14s" repeatCount="indefinite" />
       </rect>
 
+      <!-- Sniffer Stream Output -->
       <g opacity="0">
         <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.84;0.85;0.96;1" dur="14s" repeatCount="indefinite" />
         <g transform="translate(0, 24)">
@@ -147,10 +171,14 @@
           <line x1="0" y1="28" x2="750" y2="28" stroke="#30363d" stroke-width="1" />
           <text x="0" y="48" fill="#56d364">00:1A:2B:6F:98:C1  -28  100      240   34   6  WPA2 CCMP    PSK   TARGET_AP</text>
           
-          <text x="0" y="80"><tspan fill="#ff334b" font-weight="bold">root@kali</tspan><tspan fill="#58a6ff" font-weight="bold">:[~]# </tspan></text>
-          <rect x="100" y="68" width="8" height="14" fill="#39d353">
-            <animate attributeName="opacity" values="1;0;1" dur="0.8s" repeatCount="indefinite" />
-          </rect>
+          <!-- Final Waiting Cursor (starts hidden until session captures) -->
+          <g opacity="0">
+            <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.84;0.85;0.96;1" dur="14s" repeatCount="indefinite" />
+            <text x="0" y="80"><tspan fill="#ff334b" font-weight="bold">root@kali</tspan><tspan fill="#58a6ff" font-weight="bold">:[~]# </tspan></text>
+            <rect x="100" y="68" width="8" height="14" fill="#39d353">
+              <animate attributeName="opacity" values="1;0;1" dur="0.8s" repeatCount="indefinite" />
+            </rect>
+          </g>
         </g>
       </g>
     </g>
