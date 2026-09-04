@@ -4,6 +4,9 @@
 </div>
 
 <br/>
+<div align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=3000&pause=1000&color=00DFD8&background=0B0D1300&center=true&vCenter=true&width=600&lines=Cybersecurity+Enthusiast;Building+YAT+AI+Assessment+Platform;Exploring+AI+%26+Modern+Web;Always+learning.+Always+building." alt="Typing SVG" />
+</div>
 
 
 <!-- Tech Stack Section -->
@@ -24,6 +27,7 @@
 
 <br/>
 
+
 <!-- GitHub Stats Section -->
 <h2 align="center">📊 GitHub Metrics</h2>
 
@@ -38,15 +42,25 @@
 
 <br/>
 
-<!-- Random Quote Section -->
+<br/>
+
+### ✍️ Random Dev Quote
+---
 <div align="center">
-  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight&border_color=232b3e&bg_color=0b0d13" />
+  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight&border_color=00dfd8&bg_color=0b0d13" />
+</div>
+
+<br/>
+
+### 🔝 Top Contributed Repo
+---
+<div align="center">
+  <img src="https://github-readme-stats.shion.dev/api/pin/?username=anzarhasnat&repo=anzarhasnat&theme=tokyonight&border_color=00dfd8&bg_color=0b0d13&show_owner=true" />
 </div>
 
 <br/>
 
 ---
-
 <div align="center">
   <a href="https://visitcount.itsvg.in">
     <img src="https://komarev.com/ghpvc/?username=anzarhasnat&color=00dfd8&style=flat-square&label=PROFILE+VIEWS" />
