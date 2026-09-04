@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300">
+  <defs>
+    <filter id="blur1" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="55"/>
+    </filter>
+    <filter id="blur2" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="35"/>
+    </filter>
+    <linearGradient id="base" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#080b18"/>
+      <stop offset="0.5" stop-color="#10152d"/>
+      <stop offset="1" stop-color="#070a15"/>
+    </linearGradient>
+    <radialGradient id="orbA">
+      <stop offset="0" stop-color="#7c3aed" stop-opacity=".85"/>
+      <stop offset="1" stop-color="#7c3aed" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orbB">
+      <stop offset="0" stop-color="#06b6d4" stop-opacity=".75"/>
+      <stop offset="1" stop-color="#06b6d4" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orbC">
+      <stop offset="0" stop-color="#ec4899" stop-opacity=".65"/>
+      <stop offset="1" stop-color="#ec4899" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="300" rx="24" fill="url(#base)"/>
+
+  <!-- Large flowing liquid blobs -->
+  <ellipse cx="220" cy="145" rx="280" ry="190" fill="url(#orbA)" filter="url(#blur1)">
+    <animate attributeName="cx" values="220;420;180;220" dur="12s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="145;80;190;145" dur="10s" repeatCount="indefinite"/>
+    <animate attributeName="rx" values="280;350;240;280" dur="11s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <ellipse cx="720" cy="120" rx="300" ry="180" fill="url(#orbB)" filter="url(#blur1)">
+    <animate attributeName="cx" values="720;880;620;720" dur="14s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="120;190;70;120" dur="12s" repeatCount="indefinite"/>
+    <animate attributeName="rx" values="300;230;360;300" dur="13s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <ellipse cx="1010" cy="220" rx="260" ry="150" fill="url(#orbC)" filter="url(#blur2)">
+    <animate attributeName="cx" values="1010;870;1080;1010" dur="15s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="220;150;250;220" dur="11s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <!-- Subtle moving glow -->
+  <circle cx="600" cy="150" r="75" fill="none" stroke="white" stroke-opacity=".08" stroke-width="1">
+    <animate attributeName="r" values="55;95;55" dur="7s" repeatCount="indefinite"/>
+    <animate attributeName="stroke-opacity" values=".03;.12;.03" dur="7s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Fine highlight -->
+  <path d="M-50 230 C220 120 350 310 600 190 S980 70 1250 180"
+        fill="none" stroke="white" stroke-opacity=".07" stroke-width="2">
+    <animate attributeName="d"
+      values="M-50 230 C220 120 350 310 600 190 S980 70 1250 180;
+              M-50 170 C200 280 400 90 620 220 S1000 250 1250 120;
+              M-50 230 C220 120 350 310 600 190 S980 70 1250 180"
+      dur="16s" repeatCount="indefinite"/>
+  </path>
+</svg>
