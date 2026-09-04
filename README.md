@@ -27,12 +27,9 @@
 
 <br/>
 
-<h2 align="center">⚔️ Root Terminal Session</h2>
-
 <div align="center">
-  <img src="./assets/terminal.svg" alt="Kali Linux Terminal" width="100%" />
+  <img src="https://raw.githubusercontent.com/anzarhasnat/anzarhasnat/main/assets/terminal.svg" alt="Kali Linux Terminal" width="100%" />
 </div>
-
 
 <!-- GitHub Stats Section -->
 <h2 align="center">📊 GitHub Metrics</h2>
